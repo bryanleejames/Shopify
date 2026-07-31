@@ -1,0 +1,226 @@
+{
+  "meta": {
+    "title": "TruthWell Design Tokens",
+    "description": "Complete visual design system for TruthWell — a peaceful, premium Christian meditation and verse platform",
+    "version": "1.0.0",
+    "lastUpdated": "2026-07-04"
+  },
+  "colors": {
+    "brand": {
+      "primary": {
+        "50": "#eef2ff",
+        "100": "#e0e7ff",
+        "200": "#c7d2fe",
+        "300": "#a5b4fc",
+        "400": "#818cf8",
+        "500": "#6366f1",
+        "600": "#4f46e5",
+        "700": "#4338ca",
+        "800": "#312e81",
+        "900": "#1e1b4b",
+        "950": "#0f0d2e"
+      },
+      "accent": {
+        "50": "#fffbeb",
+        "100": "#fef3c7",
+        "200": "#fde68a",
+        "300": "#fcd34d",
+        "400": "#fbbf24",
+        "500": "#f59e0b",
+        "600": "#d97706",
+        "700": "#b45309",
+        "800": "#92400e",
+        "900": "#78350f",
+        "950": "#451a03"
+      }
+    },
+    "semantic": {
+      "background": {
+        "light": "#ffffff",
+        "warm": "#faf8f4",
+        "subtle": "#f0eef6",
+        "dark": "#0f0d2e",
+        "darkWarm": "#1a1638",
+        "card": "rgba(255, 255, 255, 0.95)",
+        "cardDark": "rgba(30, 27, 75, 0.85)"
+      },
+      "text": {
+        "primary": "#1a1a2e",
+        "secondary": "#6b6b80",
+        "muted": "#9ca3af",
+        "light": "#ffffff",
+        "lightMuted": "rgba(255, 255, 255, 0.7)",
+        "scripture": "#312e81",
+        "scriptureLight": "#e0e7ff"
+      },
+      "border": {
+        "light": "#e5e7eb",
+        "medium": "#d1d5db",
+        "subtle": "rgba(99, 102, 241, 0.15)",
+        "accent": "rgba(245, 158, 11, 0.3)"
+      }
+    },
+    "mood": {
+      "peace": "#6366f1",
+      "hope": "#f59e0b",
+      "love": "#ec4899",
+      "joy": "#fbbf24",
+      "strength": "#ef4444",
+      "healing": "#10b981",
+      "wisdom": "#8b5cf6",
+      "gratitude": "#14b8a6",
+      "faith": "#3b82f6",
+      "forgiveness": "#a855f7",
+      "courage": "#f97316",
+      "comfort": "#64748b",
+      "guidance": "#06b6d4",
+      "patience": "#84cc16"
+    }
+  },
+  "typography": {
+    "fontFamilies": {
+      "scripture": ["'Georgia'", "'Palatino Linotype'", "'Book Antiqua'", "'Times New Roman'", "serif"],
+      "display": ["'DM Serif Display'", "'Playfair Display'", "'Georgia'", "serif"],
+      "body": ["'Inter'", "'-apple-system'", "'BlinkMacSystemFont'", "'Segoe UI'", "sans-serif"],
+      "mono": ["'JetBrains Mono'", "'Fira Code'", "'Consolas'", "monospace"]
+    },
+    "fontSizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
+      "7xl": "4.5rem",
+      "scripture": "1.375rem",
+      "scriptureLarge": "1.75rem"
+    },
+    "fontWeights": {
+      "light": 300,
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "heavy": 800
+    },
+    "lineHeights": {
+      "tight": 1.15,
+      "normal": 1.5,
+      "relaxed": 1.75,
+      "scripture": 1.8
+    },
+    "letterSpacing": {
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  "spacing": {
+    "xs": "0.25rem",
+    "sm": "0.5rem",
+    "md": "1rem",
+    "lg": "1.5rem",
+    "xl": "2rem",
+    "2xl": "3rem",
+    "3xl": "4rem",
+    "4xl": "6rem",
+    "5xl": "8rem",
+    "section": "5rem",
+    "content": "1.25rem"
+  },
+  "borderRadius": {
+    "sm": "0.375rem",
+    "md": "0.5rem",
+    "lg": "0.75rem",
+    "xl": "1rem",
+    "2xl": "1.5rem",
+    "full": "9999px",
+    "card": "0.75rem",
+    "button": "0.5rem"
+  },
+  "shadows": {
+    "card": "0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+    "cardHover": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+    "elevated": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+    "glow": "0 0 15px rgba(99, 102, 241, 0.15)",
+    "glowAccent": "0 0 20px rgba(245, 158, 11, 0.2)",
+    "inner": "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)"
+  },
+  "animation": {
+    "durations": {
+      "fast": "150ms",
+      "normal": "300ms",
+      "slow": "500ms",
+      "scripture": "800ms"
+    },
+    "easing": {
+      "smooth": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "gentle": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      "spring": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    }
+  },
+  "componentTokens": {
+    "verseCard": {
+      "backgroundColor": "rgba(255, 255, 255, 0.95)",
+      "backgroundColorDark": "rgba(30, 27, 75, 0.85)",
+      "borderRadius": "0.75rem",
+      "padding": "2rem",
+      "borderColor": "rgba(99, 102, 241, 0.15)",
+      "shadow": "0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.1)",
+      "shadowHover": "0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.05)"
+    },
+    "button": {
+      "primaryBackground": "#4f46e5",
+      "primaryHover": "#4338ca",
+      "primaryText": "#ffffff",
+      "accentBackground": "#f59e0b",
+      "accentHover": "#d97706",
+      "accentText": "#1a1a2e",
+      "ghostBackground": "transparent",
+      "ghostHover": "rgba(79, 70, 229, 0.08)",
+      "borderRadius": "0.5rem",
+      "fontWeight": 600,
+      "paddingX": "1.5rem",
+      "paddingY": "0.625rem"
+    },
+    "nav": {
+      "backgroundColor": "rgba(255, 255, 255, 0.85)",
+      "backgroundColorDark": "rgba(15, 13, 46, 0.85)",
+      "borderColor": "rgba(99, 102, 241, 0.1)",
+      "backdropBlur": "12px",
+      "height": "4rem"
+    },
+    "input": {
+      "borderColor": "#d1d5db",
+      "focusBorderColor": "#6366f1",
+      "focusRing": "0 0 0 3px rgba(99, 102, 241, 0.2)",
+      "borderRadius": "0.5rem",
+      "padding": "0.75rem 1rem"
+    },
+    "badge": {
+      "borderRadius": "9999px",
+      "fontSize": "0.75rem",
+      "fontWeight": 500,
+      "paddingX": "0.75rem",
+      "paddingY": "0.25rem"
+    }
+  },
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "patterns": {
+    "backgroundMotif": "Subtle radial gradients and gentle light bursts used behind hero sections and verse cards",
+    "dividers": "Thin gold/indigo gradient lines or soft ornamental flourishes between sections",
+    "verseDecoration": "A subtle gold asterisk or cross ornament before/after featured verses"
+  }
+}

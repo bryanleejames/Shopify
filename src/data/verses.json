@@ -1,0 +1,656 @@
+{
+  "meta": {
+    "title": "TruthWell Verse Library",
+    "description": "A curated collection of Bible verses organized by theme, season, and life circumstance",
+    "version": "1.0.0",
+    "lastUpdated": "2026-07-04",
+    "totalVerses": 78,
+    "themes": [
+      "Faith", "Hope", "Love", "Peace", "Joy",
+      "Wisdom", "Strength", "Healing", "Gratitude", "Forgiveness",
+      "Courage", "Comfort", "Guidance", "Patience"
+    ]
+  },
+  "verses": [
+    {
+      "id": "faith-001",
+      "reference": "Hebrews 11:1",
+      "text": "Now faith is confidence in what we hope for and assurance about what we do not see.",
+      "themes": ["Faith", "Hope"],
+      "prompt": "What is one thing you are trusting God for today even though you cannot see the outcome?",
+      "devotional": "Faith bridges the gap between what we see and what we believe. It is not blind optimism but confident trust in the character of God, who has never failed those who put their hope in Him."
+    },
+    {
+      "id": "faith-002",
+      "reference": "2 Corinthians 5:7",
+      "text": "For we live by faith, not by sight.",
+      "themes": ["Faith"],
+      "prompt": "In what area of your life are you relying on sight rather than faith today?",
+      "devotional": "Walking by faith means letting God's promises guide you louder than your circumstances. It is a daily choice to trust what He has said over what you can see."
+    },
+    {
+      "id": "faith-003",
+      "reference": "Matthew 17:20",
+      "text": "He replied, 'Because you have so little faith. Truly I tell you, if you have faith as small as a mustard seed, you can say to this mountain, 'Move from here to there,' and it will move. Nothing will be impossible for you.'",
+      "themes": ["Faith", "Strength"],
+      "prompt": "What 'mountain' in your life needs to hear your mustard seed of faith today?",
+      "devotional": "God doesn't require monumental faith — just genuine faith. A tiny seed of trust placed in an enormous God can move mountains you thought were immovable."
+    },
+    {
+      "id": "faith-004",
+      "reference": "Mark 11:24",
+      "text": "Therefore I tell you, whatever you ask for in prayer, believe that you have received it, and it will be yours.",
+      "themes": ["Faith", "Guidance"],
+      "prompt": "Are you praying with expectation, or with doubt dressed as humility?",
+      "devotional": "Prayer is not just presenting requests to God — it is aligning your heart with His willingness to answer. Belief opens the door for His power to move."
+    },
+    {
+      "id": "faith-005",
+      "reference": "Romans 10:17",
+      "text": "Consequently, faith comes from hearing the message, and the message is heard through the word about Christ.",
+      "themes": ["Faith", "Wisdom"],
+      "prompt": "How can you immerse yourself more deeply in God's Word this week?",
+      "devotional": "Faith is not something we manufacture — it is born from exposure to God's Word. The more we hear, the more we trust."
+    },
+    {
+      "id": "faith-006",
+      "reference": "James 1:6",
+      "text": "But when you ask, you must believe and not doubt, because the one who doubts is like a wave of the sea, blown and tossed by the wind.",
+      "themes": ["Faith"],
+      "prompt": "What doubt has been tossing you back and forth lately?",
+      "devotional": "A doubting heart is unstable, but God welcomes honest questions. Bring your doubt to Him and let His faithfulness anchor your soul."
+    },
+    {
+      "id": "hope-001",
+      "reference": "Jeremiah 29:11",
+      "text": "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future.",
+      "themes": ["Hope", "Guidance"],
+      "prompt": "How does knowing God has good plans for you change how you face tomorrow?",
+      "devotional": "God's plans are not random — they are purposeful and good. Even in uncertainty, your future is secure in the hands of the One who holds all time."
+    },
+    {
+      "id": "hope-002",
+      "reference": "Romans 15:13",
+      "text": "May the God of hope fill you with all joy and peace as you trust in him, so that you may overflow with hope by the power of the Holy Spirit.",
+      "themes": ["Hope", "Joy", "Peace"],
+      "prompt": "What would it look like to truly overflow with hope today?",
+      "devotional": "Hope is not just a feeling — it is a filling. When we trust God, He pours hope into us until it overflows onto everyone around us."
+    },
+    {
+      "id": "hope-003",
+      "reference": "Psalm 39:7",
+      "text": "But now, Lord, what do I look for? My hope is in you.",
+      "themes": ["Hope"],
+      "prompt": "Where else have you been looking for hope that only God can provide?",
+      "devotional": "When everything else fails, God remains. Placing your hope in Him is not a last resort — it is the only sure foundation."
+    },
+    {
+      "id": "hope-004",
+      "reference": "Hebrews 6:19",
+      "text": "We have this hope as an anchor for the soul, firm and secure.",
+      "themes": ["Hope", "Strength"],
+      "prompt": "What storms in your life need the anchoring power of hope right now?",
+      "devotional": "Hope is not wishful thinking — it is an anchor that holds your soul steady when the storms of life rage. It reaches beyond what you can see into the presence of God Himself."
+    },
+    {
+      "id": "hope-005",
+      "reference": "Psalm 130:5",
+      "text": "I wait for the Lord, my whole being waits, and in his word I put my hope.",
+      "themes": ["Hope", "Patience"],
+      "prompt": "What are you waiting for God to do, and how can His Word sustain you in the waiting?",
+      "devotional": "Waiting is not wasted time — it is hope in motion. Every moment of waiting is an opportunity to deepen your trust in God's perfect timing."
+    },
+    {
+      "id": "hope-006",
+      "reference": "Romans 8:24-25",
+      "text": "For in this hope we were saved. But hope that is seen is no hope at all. Who hopes for what they already have? But if we hope for what we do not yet have, we wait for it patiently.",
+      "themes": ["Hope", "Patience"],
+      "prompt": "What unseen promise are you hoping for today?",
+      "devotional": "Hope is for the unseen. If you can see it, it is not hope — it is possession. The beauty of hope is that it trusts God for what is not yet visible."
+    },
+    {
+      "id": "love-001",
+      "reference": "1 Corinthians 13:4-5",
+      "text": "Love is patient, love is kind. It does not envy, it does not boast, it is not proud. It does not dishonor others, it is not self-seeking, it is not easily angered, it keeps no record of wrongs.",
+      "themes": ["Love", "Patience", "Forgiveness"],
+      "prompt": "Which attribute of love do you find most challenging to live out today?",
+      "devotional": "Love is not a feeling — it is a set of choices. Patience, kindness, humility, forgiveness — these are the actions that define real, God-honoring love."
+    },
+    {
+      "id": "love-002",
+      "reference": "1 John 4:19",
+      "text": "We love because he first loved us.",
+      "themes": ["Love", "Gratitude"],
+      "prompt": "How does remembering that God loved you first change how you love others?",
+      "devotional": "Our love is always a response. God initiated. He poured His love into us first, and everything we give flows from what we have received."
+    },
+    {
+      "id": "love-003",
+      "reference": "John 15:13",
+      "text": "Greater love has no one than this: to lay down one's life for one's friends.",
+      "themes": ["Love", "Courage"],
+      "prompt": "What small way can you 'lay down your life' for someone today?",
+      "devotional": "Laying down your life doesn't always mean dying — it means living for others. It is choosing their needs over your comfort, their peace over your pride."
+    },
+    {
+      "id": "love-004",
+      "reference": "Romans 13:10",
+      "text": "Love does no harm to a neighbor. Therefore love is the fulfillment of the law.",
+      "themes": ["Love"],
+      "prompt": "Is there anyone you have harmed that needs the healing touch of your love today?",
+      "devotional": "Love is the simplest and hardest command. It sums up everything God asks of us — to do no harm and to actively seek the good of those around us."
+    },
+    {
+      "id": "love-005",
+      "reference": "1 Peter 4:8",
+      "text": "Above all, love each other deeply, because love covers over a multitude of sins.",
+      "themes": ["Love", "Forgiveness", "Comfort"],
+      "prompt": "Who needs the covering of your deep love today, even if they have wronged you?",
+      "devotional": "Deep love doesn't pretend wrongs don't exist — it covers them. Not by ignoring, but by forgiving and choosing relationship over being right."
+    },
+    {
+      "id": "love-006",
+      "reference": "Colossians 3:14",
+      "text": "And over all these virtues put on love, which binds them all together in perfect unity.",
+      "themes": ["Love"],
+      "prompt": "What virtue are you practicing today that needs to be wrapped in love?",
+      "devotional": "Love is the garment that holds every other virtue together. Without it, patience is cold, kindness is hollow, and generosity is empty."
+    },
+    {
+      "id": "peace-001",
+      "reference": "Philippians 4:6-7",
+      "text": "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God. And the peace of God, which transcends all understanding, will guard your hearts and your minds in Christ Jesus.",
+      "themes": ["Peace", "Gratitude"],
+      "prompt": "What anxiety can you exchange for prayer today, and how can gratitude precede your request?",
+      "devotional": "Peace is not the absence of problems — it is the presence of God. When anxiety rises, prayer becomes the bridge to a peace that makes no human sense."
+    },
+    {
+      "id": "peace-002",
+      "reference": "John 14:27",
+      "text": "Peace I leave with you; my peace I give you. I do not give to you as the world gives. Do not let your hearts be troubled and do not be afraid.",
+      "themes": ["Peace", "Courage"],
+      "prompt": "What troubled place in your heart needs the unique peace that only Jesus can give?",
+      "devotional": "The world's peace depends on circumstances. Christ's peace depends on His presence. That is why it holds steady when everything around you shakes."
+    },
+    {
+      "id": "peace-003",
+      "reference": "Isaiah 26:3",
+      "text": "You will keep in perfect peace those whose minds are steadfast, because they trust in you.",
+      "themes": ["Peace", "Trust"],
+      "prompt": "Is your mind fixed on your circumstances or on the God who holds them?",
+      "devotional": "Perfect peace is not the absence of noise — it is a mind fixed on God. The more steady your focus on Him, the more unshakable your peace becomes."
+    },
+    {
+      "id": "peace-004",
+      "reference": "Psalm 34:14",
+      "text": "Turn from evil and do good; seek peace and pursue it.",
+      "themes": ["Peace"],
+      "prompt": "What does actively pursuing peace look like in your relationships today?",
+      "devotional": "Peace is not passive — it must be pursued. It is a deliberate choice to turn from strife and invest in harmony, even when it costs you something."
+    },
+    {
+      "id": "peace-005",
+      "reference": "Colossians 3:15",
+      "text": "Let the peace of Christ rule in your hearts, since as members of one body you were called to peace. And be thankful.",
+      "themes": ["Peace", "Gratitude"],
+      "prompt": "Is peace ruling your heart today, or is something else in charge?",
+      "devotional": "Peace is meant to be the umpire in your heart — the deciding voice when emotions and thoughts conflict. Let it call the shots."
+    },
+    {
+      "id": "peace-006",
+      "reference": "Matthew 5:9",
+      "text": "Blessed are the peacemakers, for they will be called children of God.",
+      "themes": ["Peace"],
+      "prompt": "Where can you be a peacemaker today rather than just a peace-keeper?",
+      "devotional": "Peacemakers don't just avoid conflict — they actively create it where it is missing. They are bridges, not walls."
+    },
+    {
+      "id": "joy-001",
+      "reference": "Nehemiah 8:10",
+      "text": "Do not grieve, for the joy of the Lord is your strength.",
+      "themes": ["Joy", "Strength"],
+      "prompt": "How could drawing on God's joy change the way you face today's challenges?",
+      "devotional": "Joy is not the absence of sorrow — it is the presence of God's strength within it. His joy becomes your inner power when you have nothing left on your own."
+    },
+    {
+      "id": "joy-002",
+      "reference": "Psalm 16:11",
+      "text": "You make known to me the path of life; you will fill me with joy in your presence, with eternal pleasures at your right hand.",
+      "themes": ["Joy", "Guidance"],
+      "prompt": "When did you last experience pure joy simply from being in God's presence?",
+      "devotional": "Joy is not found in activities or achievements — it is found in presence. The deepest, most lasting joy comes from being with the One who made you."
+    },
+    {
+      "id": "joy-003",
+      "reference": "James 1:2-3",
+      "text": "Consider it pure joy, my brothers and sisters, whenever you face trials of many kinds, because you know that the testing of your faith produces perseverance.",
+      "themes": ["Joy", "Strength", "Patience"],
+      "prompt": "Can you find joy in your current trial knowing it is producing something lasting in you?",
+      "devotional": "Joy in trials is not pretending pain doesn't hurt — it is trusting that God is using the pressure to create something beautiful in your character."
+    },
+    {
+      "id": "joy-004",
+      "reference": "Psalm 118:24",
+      "text": "The Lord has done it this very day; let us rejoice today and be glad.",
+      "themes": ["Joy", "Gratitude"],
+      "prompt": "What has God done today that deserves your rejoicing, even in the small things?",
+      "devotional": "Joy is a choice before it is a feeling. Every day is a gift from God, and choosing to rejoice is how we unwrap it."
+    },
+    {
+      "id": "joy-005",
+      "reference": "John 16:22",
+      "text": "So with you: Now is your time of grief, but I will see you again and you will rejoice, and no one will take away your joy.",
+      "themes": ["Joy", "Comfort", "Hope"],
+      "prompt": "What lasting joy has God given you that no circumstance can take away?",
+      "devotional": "The joy Jesus gives is not fragile. It survives grief, outlasts pain, and cannot be stolen because it is anchored in an eternal reality."
+    },
+    {
+      "id": "joy-006",
+      "reference": "Romans 14:17",
+      "text": "For the kingdom of God is not a matter of eating and drinking, but of righteousness, peace and joy in the Holy Spirit.",
+      "themes": ["Joy", "Peace"],
+      "prompt": "Are you pursuing the superficial things of the world or the deep joy of the Spirit?",
+      "devotional": "God's kingdom runs on righteousness, peace, and joy — not on having the right things. This is a joy that satisfies the soul."
+    },
+    {
+      "id": "wisdom-001",
+      "reference": "Proverbs 3:5-6",
+      "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+      "themes": ["Wisdom", "Guidance", "Faith"],
+      "prompt": "Where are you leaning on your own understanding instead of trusting God fully?",
+      "devotional": "Wisdom begins with admitting you don't have all the answers. When you stop leaning on your own understanding and lean into God, He directs your steps."
+    },
+    {
+      "id": "wisdom-002",
+      "reference": "James 1:5",
+      "text": "If any of you lacks wisdom, you should ask God, who gives generously to all without finding fault, and it will be given to you.",
+      "themes": ["Wisdom", "Guidance"],
+      "prompt": "What decision are you facing where you need to ask God for wisdom today?",
+      "devotional": "God never scolds us for asking for wisdom. He gives it generously, without making us feel foolish for not knowing. Ask boldly."
+    },
+    {
+      "id": "wisdom-003",
+      "reference": "Proverbs 2:6",
+      "text": "For the Lord gives wisdom; from his mouth come knowledge and understanding.",
+      "themes": ["Wisdom"],
+      "prompt": "Are you seeking wisdom from God's Word or from the world's opinions?",
+      "devotional": "True wisdom doesn't originate in human intellect — it comes from God. Every insight that leads to life begins with listening to Him."
+    },
+    {
+      "id": "wisdom-004",
+      "reference": "Ecclesiastes 7:12",
+      "text": "For wisdom is a shelter as money is a shelter, but the advantage of knowledge is this: Wisdom preserves those who have it.",
+      "themes": ["Wisdom"],
+      "prompt": "In what area of your life do you need wisdom to protect you today?",
+      "devotional": "Money might provide temporary shelter, but wisdom preserves your life. It protects you from decisions that no amount of money can fix."
+    },
+    {
+      "id": "wisdom-005",
+      "reference": "Proverbs 4:6-7",
+      "text": "Do not forsake wisdom, and she will protect you; love her, and she will watch over you. The beginning of wisdom is this: Get wisdom. Though it cost all you have, get understanding.",
+      "themes": ["Wisdom"],
+      "prompt": "What is wisdom costing you right now, and is it worth the price?",
+      "devotional": "Wisdom is worth everything you invest in it. It costs humility, time, and sometimes saying no to what looks good. But it pays dividends for a lifetime."
+    },
+    {
+      "id": "wisdom-006",
+      "reference": "Colossians 2:3",
+      "text": "In whom are hidden all the treasures of wisdom and knowledge.",
+      "themes": ["Wisdom"],
+      "prompt": "Are you searching for wisdom in Christ, or looking everywhere else first?",
+      "devotional": "All the wisdom you will ever need is hidden in Christ. Not hidden to be kept from you, but hidden to be discovered — treasure waiting for those who seek."
+    },
+    {
+      "id": "strength-001",
+      "reference": "Isaiah 40:31",
+      "text": "But those who hope in the Lord will renew their strength. They will soar on wings like eagles; they will run and not grow weary, they will walk and not be faint.",
+      "themes": ["Strength", "Hope"],
+      "prompt": "What has left you weary, and how can hoping in God renew your strength today?",
+      "devotional": "Strength is not about pushing harder — it is about waiting on the Lord. When you hope in Him, He doesn't just give you strength — He renews it."
+    },
+    {
+      "id": "strength-002",
+      "reference": "Philippians 4:13",
+      "text": "I can do all this through him who gives me strength.",
+      "themes": ["Strength", "Faith"],
+      "prompt": "What are you facing today that feels beyond your ability?",
+      "devotional": "The strength to face anything doesn't come from within you — it comes through you. Christ doesn't just help the strong; He becomes strength for the weak."
+    },
+    {
+      "id": "strength-003",
+      "reference": "Psalm 28:7",
+      "text": "The Lord is my strength and my shield; my heart trusts in him, and he helps me.",
+      "themes": ["Strength", "Faith"],
+      "prompt": "In what area do you need God to be both your strength and your shield today?",
+      "devotional": "God is not just one thing to us — He is everything we need. He strengthens us to move forward and shields us from what would hold us back."
+    },
+    {
+      "id": "strength-004",
+      "reference": "Deuteronomy 31:6",
+      "text": "Be strong and courageous. Do not be afraid or terrified because of them, for the Lord your God goes with you; he will never leave you nor forsake you.",
+      "themes": ["Strength", "Courage"],
+      "prompt": "What fear does the promise of God's constant presence help you face today?",
+      "devotional": "Courage is not the absence of fear — it is moving forward because you know you are not alone. God's presence is your greatest source of strength."
+    },
+    {
+      "id": "strength-005",
+      "reference": "2 Corinthians 12:9-10",
+      "text": "But he said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Therefore I will boast all the more gladly about my weaknesses, so that Christ's power may rest on me.",
+      "themes": ["Strength", "Healing"],
+      "prompt": "What weakness in your life could become a showcase for God's power?",
+      "devotional": "Your weakness is not a problem to be solved — it is an opportunity for God's power to be displayed. When you are weak, He is strong."
+    },
+    {
+      "id": "strength-006",
+      "reference": "Psalm 18:32",
+      "text": "It is God who arms me with strength and keeps my way secure.",
+      "themes": ["Strength"],
+      "prompt": "How does knowing God personally arms you with strength change your outlook today?",
+      "devotional": "You don't have to manufacture strength from nothing — God equips you. He doesn't just call you to be strong; He arms you with the strength you need."
+    },
+    {
+      "id": "healing-001",
+      "reference": "Psalm 147:3",
+      "text": "He heals the brokenhearted and binds up their wounds.",
+      "themes": ["Healing", "Comfort"],
+      "prompt": "What hidden wound in your heart needs God's gentle healing touch today?",
+      "devotional": "God doesn't just heal visible hurts — He tends to the brokenhearted. He knows exactly where you ache and binds your wounds with tender care."
+    },
+    {
+      "id": "healing-002",
+      "reference": "Jeremiah 30:17",
+      "text": "But I will restore you to health and heal your wounds, declares the Lord.",
+      "themes": ["Healing"],
+      "prompt": "Are you ready to let God restore what has been broken in your life?",
+      "devotional": "Healing is not just about feeling better — it is about being restored. God's promise is not just to patch you up but to make you whole."
+    },
+    {
+      "id": "healing-003",
+      "reference": "Isaiah 53:5",
+      "text": "But he was pierced for our transgressions, he was crushed for our iniquities; the punishment that brought us peace was on him, and by his wounds we are healed.",
+      "themes": ["Healing", "Peace", "Forgiveness"],
+      "prompt": "How does the sacrifice of Christ bring both forgiveness and healing to your life?",
+      "devotional": "Our healing came at a cost. Christ's wounds purchased more than forgiveness — they purchased wholeness for every broken part of our lives."
+    },
+    {
+      "id": "healing-004",
+      "reference": "Psalm 30:2",
+      "text": "Lord my God, I called to you for help, and you healed me.",
+      "themes": ["Healing"],
+      "prompt": "What have you been suffering silently that you need to cry out to God for?",
+      "devotional": "Healing begins with a cry. God doesn't ignore our calls for help — He hears and He responds. Sometimes the hardest step is simply asking."
+    },
+    {
+      "id": "healing-005",
+      "reference": "James 5:15",
+      "text": "And the prayer offered in faith will make the sick person well; the Lord will raise them up.",
+      "themes": ["Healing", "Faith"],
+      "prompt": "Are you praying with faith for healing, or have you stopped asking?",
+      "devotional": "Prayer is the bridge between our need and God's power. When faith meets prayer, healing begins — whether in the body, mind, or spirit."
+    },
+    {
+      "id": "healing-006",
+      "reference": "Psalm 103:2-3",
+      "text": "Praise the Lord, my soul, and forget not all his benefits — who forgives all your sins and heals all your diseases.",
+      "themes": ["Healing", "Gratitude", "Forgiveness"],
+      "prompt": "What benefits of God have you forgotten that deserve your praise today?",
+      "devotional": "Forgiveness and healing are inseparable gifts from the same generous hand. Remembering what God has done opens the door for praise and restoration."
+    },
+    {
+      "id": "gratitude-001",
+      "reference": "1 Thessalonians 5:16-18",
+      "text": "Rejoice always, pray continually, give thanks in all circumstances; for this is God's will for you in Christ Jesus.",
+      "themes": ["Gratitude", "Joy"],
+      "prompt": "What circumstance in your life seems hardest to give thanks in today?",
+      "devotional": "Gratitude is not about pretending everything is perfect — it is about finding God's goodness even in imperfect circumstances. His will is not that we feel thankful, but that we choose it."
+    },
+    {
+      "id": "gratitude-002",
+      "reference": "Psalm 100:4",
+      "text": "Enter his gates with thanksgiving and his courts with praise; give thanks to him and praise his name.",
+      "themes": ["Gratitude"],
+      "prompt": "How can thanksgiving be the door that opens your time with God today?",
+      "devotional": "Thanksgiving is not an afterthought in worship — it is the entrance. Before you ask for anything, come with gratitude and let praise lead the way."
+    },
+    {
+      "id": "gratitude-003",
+      "reference": "Colossians 3:15-17",
+      "text": "Let the peace of Christ rule in your hearts... And be thankful. Let the message of Christ dwell among you richly... singing to God with gratitude in your hearts. And whatever you do, whether in word or deed, do it all in the name of the Lord Jesus, giving thanks to God the Father through him.",
+      "themes": ["Gratitude", "Peace"],
+      "prompt": "How would approaching everything you do today with gratitude change your experience?",
+      "devotional": "Gratitude is not a feeling — it is a way of living. When gratitude fills your heart, peace rules, worship flows, and every action becomes an offering."
+    },
+    {
+      "id": "gratitude-004",
+      "reference": "Psalm 107:1",
+      "text": "Give thanks to the Lord, for he is good; his love endures forever.",
+      "themes": ["Gratitude", "Love"],
+      "prompt": "Take a moment — what is one specific way God's enduring love has shown up in your life this week?",
+      "devotional": "Gratitude starts with remembering. His goodness and enduring love are the foundation of every reason we have to give thanks."
+    },
+    {
+      "id": "gratitude-005",
+      "reference": "Hebrews 12:28",
+      "text": "Therefore, since we are receiving a kingdom that cannot be shaken, let us be thankful, and so worship God acceptably with reverence and awe.",
+      "themes": ["Gratitude"],
+      "prompt": "How does knowing you have an unshakable kingdom change your perspective on temporary struggles?",
+      "devotional": "When everything around you shakes, gratitude anchors you to what cannot be shaken. An unshakable kingdom deserves unceasing thanks."
+    },
+    {
+      "id": "forgiveness-001",
+      "reference": "1 John 1:9",
+      "text": "If we confess our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.",
+      "themes": ["Forgiveness", "Healing"],
+      "prompt": "Is there anything you need to confess today to experience God's cleansing?",
+      "devotional": "Confession is not about making God aware of our failures — it is about agreeing with Him so we can receive the forgiveness He is already offering."
+    },
+    {
+      "id": "forgiveness-002",
+      "reference": "Ephesians 4:31-32",
+      "text": "Get rid of all bitterness, rage and anger, brawling and slander, along with every form of malice. Be kind and compassionate to one another, forgiving each other, just as in Christ God forgave you.",
+      "themes": ["Forgiveness", "Love", "Comfort"],
+      "prompt": "Is there someone you need to forgive as freely as Christ forgave you?",
+      "devotional": "Forgiveness is not earned — it is extended. The measure of our forgiveness of others is the forgiveness we have already received from God."
+    },
+    {
+      "id": "forgiveness-003",
+      "reference": "Matthew 6:14-15",
+      "text": "For if you forgive other people when they sin against you, your heavenly Father will also forgive you. But if you do not forgive others their sins, your Father will not forgive your sins.",
+      "themes": ["Forgiveness"],
+      "prompt": "Is there an unforgiving heart holding back the flow of God's forgiveness in your life?",
+      "devotional": "Forgiveness is a release valve. When you forgive others, you free yourself. An unforgiving heart is a prison that keeps you more than the one who wronged you."
+    },
+    {
+      "id": "forgiveness-004",
+      "reference": "Psalm 103:12",
+      "text": "As far as the east is from the west, so far has he removed our transgressions from us.",
+      "themes": ["Forgiveness"],
+      "prompt": "Why do you keep bringing up sins that God has already removed from you?",
+      "devotional": "God doesn't just cover your sin — He removes it. East and west never meet, and neither will you and your forgiven sins. Let them stay where God put them."
+    },
+    {
+      "id": "forgiveness-005",
+      "reference": "Colossians 1:13-14",
+      "text": "For he has rescued us from the dominion of darkness and brought us into the kingdom of the Son he loves, in whom we have redemption, the forgiveness of sins.",
+      "themes": ["Forgiveness"],
+      "prompt": "How does being fully forgiven change how you see yourself and your future?",
+      "devotional": "Forgiveness is not just cancellation — it is relocation. God didn't just wipe your slate; He moved you from darkness into His own kingdom."
+    },
+    {
+      "id": "courage-001",
+      "reference": "Joshua 1:9",
+      "text": "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.",
+      "themes": ["Courage", "Strength"],
+      "prompt": "Where do you need to hear God saying 'I am with you' today?",
+      "devotional": "Courage is not an option — it is a command. And it comes with a promise: God's presence. You are not walking alone into whatever you fear."
+    },
+    {
+      "id": "courage-002",
+      "reference": "Acts 4:29",
+      "text": "Now, Lord, consider their threats and enable your servants to speak your word with great boldness.",
+      "themes": ["Courage"],
+      "prompt": "What truth do you need boldness to speak today, even if it is difficult?",
+      "devotional": "Boldness is not the absence of fear — it is speaking the truth despite it. When you ask God for courage, He gives you the words and the nerve to say them."
+    },
+    {
+      "id": "courage-003",
+      "reference": "Psalm 27:14",
+      "text": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+      "themes": ["Courage", "Patience", "Strength"],
+      "prompt": "What requires the courage of waiting rather than the courage of acting?",
+      "devotional": "Sometimes courage means charging forward. Other times it means staying put. Waiting on God takes as much strength as stepping out in faith."
+    },
+    {
+      "id": "courage-004",
+      "reference": "Isaiah 41:10",
+      "text": "So do not fear, for I am with you; do not be dismayed, for I am your God. I will strengthen you and help you; I will uphold you with my righteous right hand.",
+      "themes": ["Courage", "Strength", "Comfort"],
+      "prompt": "What fear does God's promise to uphold you with His own hand help you release?",
+      "devotional": "Fear loses its grip when you realize whose hands are holding you. God doesn't just walk beside you — He upholds you."
+    },
+    {
+      "id": "courage-005",
+      "reference": "Psalm 31:24",
+      "text": "Be strong and take heart, all you who hope in the Lord.",
+      "themes": ["Courage", "Hope"],
+      "prompt": "How does your hope in God give you the strength to face what discourages you?",
+      "devotional": "Courage flows from hope. When your hope is in the Lord, your heart can take courage even when circumstances tell you to give up."
+    },
+    {
+      "id": "courage-006",
+      "reference": "2 Timothy 1:7",
+      "text": "For the Spirit God gave us does not make us timid, but gives us power, love and self-discipline.",
+      "themes": ["Courage", "Love"],
+      "prompt": "Are you living from the Spirit of power, love, and self-discipline, or from a spirit of fear?",
+      "devotional": "Fear is not from God. Every time you feel timid, remember: the Spirit inside you is one of power, love, and a sound mind. That is your true identity."
+    },
+    {
+      "id": "comfort-001",
+      "reference": "2 Corinthians 1:3-4",
+      "text": "Praise be to the God and Father of our Lord Jesus Christ, the Father of compassion and the God of all comfort, who comforts us in all our troubles, so that we can comfort those in any trouble with the comfort we ourselves receive from God.",
+      "themes": ["Comfort", "Healing"],
+      "prompt": "Who around you needs the comfort you have received from God in your own trials?",
+      "devotional": "God doesn't comfort us just to make us feel better — He comforts us so we can become comforters. Your pain has a purpose beyond yourself."
+    },
+    {
+      "id": "comfort-002",
+      "reference": "Psalm 23:4",
+      "text": "Even though I walk through the darkest valley, I will fear no evil, for you are with me; your rod and your staff, they comfort me.",
+      "themes": ["Comfort", "Courage"],
+      "prompt": "What 'dark valley' are you walking through, and how does God's presence change the experience?",
+      "devotional": "The valley is dark, but you are not alone. God's presence doesn't always remove the darkness, but it removes the fear. His guidance is your comfort."
+    },
+    {
+      "id": "comfort-003",
+      "reference": "Matthew 5:4",
+      "text": "Blessed are those who mourn, for they will be comforted.",
+      "themes": ["Comfort", "Healing"],
+      "prompt": "Are you allowing yourself to mourn, or are you pushing grief away and missing the comfort God offers?",
+      "devotional": "Blessing comes not despite mourning, but through it. God meets us in our grief and offers a comfort that only those who have mourned can receive."
+    },
+    {
+      "id": "comfort-004",
+      "reference": "Psalm 34:18",
+      "text": "The Lord is close to the brokenhearted and saves those who are crushed in spirit.",
+      "themes": ["Comfort", "Healing"],
+      "prompt": "How does knowing that God is especially close to the brokenhearted change how you approach Him in your pain?",
+      "devotional": "God doesn't keep His distance from your pain — He draws near. When your heart is broken, He is not far away. He is right there, closer than ever."
+    },
+    {
+      "id": "comfort-005",
+      "reference": "John 14:1",
+      "text": "Do not let your hearts be troubled. You believe in God; believe also in me.",
+      "themes": ["Comfort", "Faith"],
+      "prompt": "What is troubling your heart that you need to entrust to Jesus today?",
+      "devotional": "A troubled heart finds peace not in answers but in trust. Jesus doesn't always explain our circumstances, but He invites us to believe in Him through them."
+    },
+    {
+      "id": "guidance-001",
+      "reference": "Psalm 32:8",
+      "text": "I will instruct you and teach you in the way you should go; I will counsel you with my loving eye on you.",
+      "themes": ["Guidance", "Wisdom"],
+      "prompt": "What decision are you facing where you need God's personal instruction and counsel?",
+      "devotional": "God doesn't leave you to figure it out alone. He promises to instruct, teach, and counsel you personally — with His loving eye fixed on you."
+    },
+    {
+      "id": "guidance-002",
+      "reference": "Proverbs 16:9",
+      "text": "In their hearts humans plan their course, but the Lord establishes their steps.",
+      "themes": ["Guidance", "Faith"],
+      "prompt": "How can you plan your course while remaining open to God establishing your steps?",
+      "devotional": "Planning is wise — but holding your plans with open hands is wiser. You can make all the plans you want, but God orders the steps that matter."
+    },
+    {
+      "id": "guidance-003",
+      "reference": "Isaiah 30:21",
+      "text": "Whether you turn to the right or to the left, your ears will hear a voice behind you, saying, 'This is the way; walk in it.'",
+      "themes": ["Guidance"],
+      "prompt": "Are you listening for God's guiding voice, or are you too busy with noise to hear Him?",
+      "devotional": "God's guidance is not a lightning bolt — it is a quiet voice that speaks direction into your uncertainty. Stillness is the posture of hearing."
+    },
+    {
+      "id": "guidance-004",
+      "reference": "Psalm 119:105",
+      "text": "Your word is a lamp for my feet, a light on my path.",
+      "themes": ["Guidance", "Wisdom"],
+      "prompt": "Are you consulting the light of God's Word before taking your next step?",
+      "devotional": "God's Word doesn't always show you the whole journey — but it gives enough light for the next step. That is all you need to keep walking."
+    },
+    {
+      "id": "guidance-005",
+      "reference": "Proverbs 3:5-6",
+      "text": "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+      "themes": ["Guidance", "Wisdom", "Faith"],
+      "prompt": "What is one way you can practically submit your path to God today?",
+      "devotional": "Straight paths come from submitted hearts. When you stop trying to figure everything out and start submitting every area to God, He clears the way."
+    },
+    {
+      "id": "patience-001",
+      "reference": "Psalm 27:14",
+      "text": "Wait for the Lord; be strong and take heart and wait for the Lord.",
+      "themes": ["Patience", "Courage"],
+      "prompt": "What are you waiting for that requires both patience and strength?",
+      "devotional": "Waiting on God is not passive resignation — it is active, courageous trust. It takes strength to wait when every part of you wants to rush ahead."
+    },
+    {
+      "id": "patience-002",
+      "reference": "Romans 12:12",
+      "text": "Be joyful in hope, patient in affliction, faithful in prayer.",
+      "themes": ["Patience", "Hope", "Joy"],
+      "prompt": "Which of these three — joy, patience, or faithfulness — do you need most today?",
+      "devotional": "These three commands form a chain: hope fuels joy, joy strengthens patience, and patience finds its power in prayer. Each one enables the next."
+    },
+    {
+      "id": "patience-003",
+      "reference": "Ecclesiastes 3:1",
+      "text": "There is a time for everything, and a season for every activity under the heavens.",
+      "themes": ["Patience", "Wisdom"],
+      "prompt": "What season are you in right now, and are you trying to rush to the next one?",
+      "devotional": "Every season has a purpose. Patience is trusting that God knows the timing — and that the season you are in is not a delay but a necessary part of His plan."
+    },
+    {
+      "id": "patience-004",
+      "reference": "James 5:7-8",
+      "text": "Be patient, then, brothers and sisters, until the Lord's coming. See how the farmer waits for the land to yield its valuable crop, patiently waiting for the autumn and spring rains. You too, be patient and stand firm, because the Lord's coming is near.",
+      "themes": ["Patience"],
+      "prompt": "What 'crop' in your life needs the patient waiting that a farmer understands?",
+      "devotional": "A farmer cannot rush the harvest. He prepares, plants, waters, and waits. Patience is not lazy — it is the active trust that growth is happening even when you cannot see it."
+    },
+    {
+      "id": "patience-005",
+      "reference": "Proverbs 14:29",
+      "text": "Whoever is patient has great understanding, but one who is quick-tempered displays folly.",
+      "themes": ["Patience", "Wisdom"],
+      "prompt": "Where has impatience led you to act foolishly, and how can you choose understanding instead?",
+      "devotional": "Patience is a sign of wisdom. A quick temper reveals more about what is missing inside us than about what is wrong around us."
+    },
+    {
+      "id": "patience-006",
+      "reference": "Psalm 37:7",
+      "text": "Be still before the Lord and wait patiently for him; do not fret when people succeed in their ways, when they carry out their wicked schemes.",
+      "themes": ["Patience", "Peace"],
+      "prompt": "What comparison or envy is stealing your peace and making waiting harder?",
+      "devotional": "Stillness before God is the cure for comparison. When you wait patiently before Him, the success of others no longer threatens your peace."
+    }
+  ]
+}
