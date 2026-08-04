@@ -11,6 +11,8 @@ import transactionRoutes from './routes/transactions';
 import transferRoutes from './routes/transfers';
 import devRoutes from './routes/dev';
 import subscriptionRoutes from './routes/subscription';
+import waitlistRoutes from './routes/waitlist';
+import webhookRoutes from './routes/webhooks';
 
 const app = express();
 const PORT = parseInt(process.env.PORT || '3001', 10);
@@ -20,6 +22,10 @@ initializeSchema();
 
 // Middleware
 app.use(cors());
+
+// Webhook routes need raw body BEFORE JSON parser (Stripe signature verification)
+app.use('/webhooks', express.raw({ type: 'application/json' }), webhookRoutes);
+
 app.use(express.json());
 
 // Routes
@@ -32,6 +38,7 @@ app.use('/transactions', transactionRoutes);
 app.use('/users/search', searchRouter);  // iOS: GET /users/search?q=
 app.use('/dev', devRoutes);              // Dev/test endpoints
 app.use('/subscription', subscriptionRoutes);  // Subscription management
+app.use('/waitlist', waitlistRoutes);            // Marketing waitlist signup
 
 // Health check
 app.get('/health', (_req, res) => {

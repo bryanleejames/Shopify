@@ -73,11 +73,19 @@ export function initializeSchema(): void {
       FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
     );
 
+    CREATE TABLE IF NOT EXISTS waitlist (
+      id TEXT PRIMARY KEY,
+      email TEXT NOT NULL UNIQUE,
+      source TEXT NOT NULL DEFAULT 'website',
+      created_at TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+
     CREATE TABLE IF NOT EXISTS subscriptions (
       id TEXT PRIMARY KEY,
       user_id TEXT NOT NULL UNIQUE,
       tier TEXT NOT NULL DEFAULT 'free' CHECK(tier IN ('free', 'premium')),
       stripe_subscription_id TEXT,
+      stripe_customer_id TEXT,
       early_direct_deposit INTEGER NOT NULL DEFAULT 0,
       transfer_limit REAL NOT NULL DEFAULT 5000.00,
       active INTEGER NOT NULL DEFAULT 0,
@@ -95,6 +103,7 @@ export function initializeSchema(): void {
     CREATE INDEX IF NOT EXISTS idx_verification_codes_phone ON verification_codes(phone_number);
     CREATE INDEX IF NOT EXISTS idx_bank_accounts_user ON bank_accounts(user_id);
     CREATE INDEX IF NOT EXISTS idx_subscriptions_user ON subscriptions(user_id);
+    CREATE INDEX IF NOT EXISTS idx_waitlist_email ON waitlist(email);
   `);
 
   // Migrations for existing tables (safe to run multiple times)
@@ -111,6 +120,8 @@ export function initializeSchema(): void {
     `ALTER TABLE transactions ADD COLUMN counterparty_name TEXT`,
     `ALTER TABLE transactions ADD COLUMN description TEXT`,
     `ALTER TABLE transactions ADD COLUMN note TEXT`,
+    `ALTER TABLE waitlist ADD COLUMN source TEXT NOT NULL DEFAULT 'website'`,
+    `ALTER TABLE subscriptions ADD COLUMN stripe_customer_id TEXT`,
   ];
 
   for (const sql of migrations) {
