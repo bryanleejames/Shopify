@@ -2,6 +2,7 @@ import SwiftUI
 
 @main
 struct FluxPayApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
     @State private var authViewModel = AuthViewModel()
 
     var body: some Scene {

@@ -60,6 +60,7 @@ final class AuthViewModel {
             )
             currentUser = response.user
             isAuthenticated = true
+            beginPushRegistration()
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -84,6 +85,7 @@ final class AuthViewModel {
             )
             currentUser = response.user
             isAuthenticated = true
+            beginPushRegistration()
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -109,11 +111,23 @@ final class AuthViewModel {
     }
 
     // MARK: - Sign Out
-    func signOut() {
+    func signOut() async {
+        // Unregister the push token BEFORE clearing the auth token — the
+        // backend matches the device token against the authenticated user.
+        await PushNotificationService.shared.unregister()
+
         apiClient.clearAuthToken()
         isAuthenticated = false
         isSignupMode = true
         currentUser = nil
         resetForm()
+    }
+
+    // MARK: - Push Notification Registration
+    /// Fire-and-forget: request permission and register with APNs after auth.
+    private func beginPushRegistration() {
+        Task {
+            await PushNotificationService.shared.requestPermissionAndRegister()
+        }
     }
 }

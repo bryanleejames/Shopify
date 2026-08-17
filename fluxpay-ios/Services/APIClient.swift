@@ -239,6 +239,22 @@ final class APIClient {
         let request = try buildRequest(path: "/users/search?q=\(encoded)")
         return try await perform(request)
     }
+
+    // MARK: - Push Notifications
+    /// POST /notifications/register — register this device's APNs/FCM token.
+    /// Idempotent on the server: re-registering the same token returns 200.
+    func registerDeviceToken(_ token: String, platform: String = "ios") async throws -> NotificationRegistrationResponse {
+        let body = NotificationRegisterBody(token: token, platform: platform)
+        let request = try buildRequest(path: "/notifications/register", method: "POST", body: body)
+        return try await perform(request)
+    }
+
+    /// POST /notifications/unregister — remove this device token (logout / opt-out).
+    func unregisterDeviceToken(_ token: String) async throws -> NotificationUnregisterResponse {
+        let body = NotificationUnregisterBody(token: token)
+        let request = try buildRequest(path: "/notifications/unregister", method: "POST", body: body)
+        return try await perform(request)
+    }
 }
 
 // MARK: - Request Body Types
@@ -267,6 +283,15 @@ private struct LinkBankRequestBody: Encodable {
         case routingNumber = "routing_number"
         case accountNumber = "account_number"
     }
+}
+
+private struct NotificationRegisterBody: Encodable {
+    let token: String
+    let platform: String
+}
+
+private struct NotificationUnregisterBody: Encodable {
+    let token: String
 }
 
 private struct ErrorBody: Decodable {

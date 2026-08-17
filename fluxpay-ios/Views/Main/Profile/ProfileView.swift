@@ -176,7 +176,7 @@ struct ProfileView: View {
                 titleVisibility: .visible
             ) {
                 Button("Sign Out", role: .destructive) {
-                    authViewModel.signOut()
+                    Task { await authViewModel.signOut() }
                 }
                 Button("Cancel", role: .cancel) {}
             } message: {
