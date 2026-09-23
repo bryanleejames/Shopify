@@ -11,7 +11,7 @@ enum Constants {
     // Feature flags
     static let enableBitcoin = false
     static let enableEarlyDirectDeposit = true
-    static let enablePremiumSubscription = false
+    static let enablePremiumSubscription = true
 
     // Limits
     static let maxTransferAmount: Decimal = 10_000

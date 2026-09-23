@@ -1,132 +1,78 @@
-# FluxPay iOS App
+# FluxPay — iOS App
 
-Send, receive, and manage money instantly from your iPhone.
+SwiftUI app for FluxPay: send, receive, and manage money from your iPhone.
 
 ## Requirements
 
-- **Xcode 15.0+**
-- **Swift 5.9+**
-- **iOS 17.0+** deployment target
-- **Swift Package Manager** (included with Xcode)
+- Xcode 15.0+
+- Swift 5.9+
+- iOS 17.0+
 
-## Getting Started
+## Setup
 
-### Open in Xcode
+1. Open `FluxPay.xcodeproj` in Xcode
+2. Set Team and Bundle Identifier (`io.fluxpay.app`)
+3. Update `APIClient.baseURL` in `Services/APIClient.swift` to point at your backend (default: `http://localhost:3001`)
+4. Build & run on iOS 17+ simulator
 
-1. Clone or download this repository
-2. Open Xcode
-3. Select **File → Open** and choose `FluxPay/FluxPay.xcodeproj`
-   - *If the `.xcodeproj` hasn't been generated yet, create it in Xcode:*
-   - File → New → Project → iOS → App
-   - Set Team, Bundle Identifier: `io.fluxpay.app`
-   - Interface: **SwiftUI**, Language: **Swift**
-   - Save into this directory, then copy all source files into the project
+## Architecture
 
-### Alternative: Create Project from Scratch
+MVVM pattern using `@Observable` macro (iOS 17+):
 
-1. Create a new iOS App project in Xcode (SwiftUI, iOS 17+)
-2. Replace the default `ContentView.swift` and `App.swift` with the files in this folder
-3. Copy all files preserving the directory structure
+| Layer | Technology |
+|-------|-----------|
+| UI | SwiftUI with `@State` + `@Environment` |
+| Navigation | TabView (Home, Wallet, Activity, Profile) + NavigationStack |
+| State | 7 ViewModels via `@Observable` |
+| Networking | URLSession async/await via `APIClient` singleton |
+| Auth | JWT tokens stored in Keychain |
+| Security | Face ID / Touch ID via `BiometricAuthService` |
+| Design | Centralized `DesignSystem` enum |
 
 ## Project Structure
 
 ```
 FluxPay/
-├── Package.swift                      # Swift Package Manager manifest
-├── FluxPay/
-│   ├── Info.plist                     # App configuration
-│   ├── FluxPayApp.swift               # @main app entry point
-│   │
-│   ├── Models/
-│   │   ├── User.swift                 # User, Wallet, Transaction models
-│   │   └── APIError.swift             # Error types (included in User.swift)
-│   │
-│   ├── Services/
-│   │   └── APIClient.swift            # URLSession-based networking layer
-│   │
-│   ├── ViewModels/
-│   │   ├── AuthViewModel.swift        # Auth state management
-│   │   ├── HomeViewModel.swift        # Home screen data
-│   │   ├── WalletViewModel.swift      # Wallet & payments logic
-│   │   └── ActivityViewModel.swift    # Transaction history & filters
-│   │
-│   ├── Views/
-│   │   ├── Onboarding/
-│   │   │   ├── OnboardingView.swift    # Splash → auth flow entry
-│   │   │   ├── PhoneEntryView.swift    # Phone/email input
-│   │   │   └── VerificationCodeView.swift # 6-digit code input
-│   │   │
-│   │   ├── Main/
-│   │   │   ├── MainTabView.swift       # 4-tab navigation
-│   │   │   ├── Home/
-│   │   │   │   └── HomeView.swift      # Balance + quick actions + recents
-│   │   │   ├── Wallet/
-│   │   │   │   ├── WalletView.swift    # Wallet details & limits
-│   │   │   │   ├── SendMoneyView.swift # Send money form
-│   │   │   │   └── RequestMoneyView.swift # Request money form
-│   │   │   ├── Activity/
-│   │   │   │   └── ActivityView.swift  # Transaction list with filters
-│   │   │   └── Profile/
-│   │   │       └── ProfileView.swift   # User profile & settings
-│   │   │
-│   │   └── Components/
-│   │       └── Components.swift        # Reusable UI components
-│   │
-│   └── Utils/
-│       ├── DesignSystem.swift          # Colors, typography, spacing
-│       └── Constants.swift             # App constants & extensions
+├── FluxPayApp.swift              # @main entry + biometric lock overlay
+├── Models/
+│   └── User.swift                # User, Wallet, Transaction, Subscription, etc.
+├── Services/
+│   ├── APIClient.swift           # REST client (all 15+ endpoints)
+│   ├── KeychainService.swift     # Secure token storage
+│   └── BiometricAuthService.swift # Face ID / Touch ID
+├── ViewModels/
+│   ├── AuthViewModel.swift
+│   ├── HomeViewModel.swift
+│   ├── WalletViewModel.swift
+│   ├── ActivityViewModel.swift
+│   ├── ProfileViewModel.swift
+│   ├── BiometricViewModel.swift
+│   └── OnboardingViewModel.swift
+├── Views/
+│   ├── Main/
+│   │   ├── MainTabView.swift
+│   │   ├── Home/HomeView.swift
+│   │   ├── Wallet/WalletView.swift, SendMoneyView, RequestMoneyView
+│   │   ├── Wallet/BankLinkingView.swift, TransferToBankView.swift
+│   │   ├── Activity/ActivityView.swift
+│   │   └── Profile/ProfileView.swift, SubscriptionView.swift
+│   ├── Onboarding/               # Auth flow
+│   └── Components/               # Shared UI (FluxButton, etc.)
+└── Utils/
+    ├── DesignSystem.swift         # Colors, typography, spacing
+    └── Constants.swift
 ```
 
-## Architecture
+## Key Features
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **UI** | SwiftUI | Declarative views with `@State` + `@Environment` |
-| **Navigation** | TabView + NavigationStack | 4-tab root nav, push/sheet for sub-screens |
-| **State** | MVVM (ViewModel pattern) | `@Observable` macro on ViewModels, `@State` for view-owned state |
-| **Networking** | URLSession + async/await | `APIClient.shared` singleton |
-| **Design** | DesignSystem enum | Centralized colors, fonts, spacing tokens |
+- **JWT Auth**: email/password signup + login, phone verification
+- **Wallet**: balance, weekly spend, bank accounts, subscription tier
+- **Send/Request Money**: P2P transactions with pending accept/decline
+- **Bank Transfers**: link bank account, instant (1.5% fee) or free standard
+- **Premium**: $4.99/mo subscription via Stripe
+- **Biometric Lock**: Face ID / Touch ID on app foreground, blurred overlay
+- **Keychain Storage**: auth tokens in iOS Keychain with UserDefaults fallback
 
-## Design System
+## Backend Connection
 
-FluxPay uses a clean white/blue palette inspired by modern fintech apps:
-
-- **Primary**: `#1A73E8` (blue)
-- **Accent**: `#34A853` (green)
-- **Background**: White
-- **Surface**: `#F8F9FA` (light gray)
-- **Text**: `#1F2937` (near-black)
-- **Typography**: System Rounded design
-
-All design tokens are centralized in `Utils/DesignSystem.swift`.
-
-## Networking
-
-The `APIClient` is configured to point at `https://api.fluxpay.io/v1` (placeholder).
-Update the `baseURL` in `Services/APIClient.swift` when the real backend URL is available.
-
-### Authentication Flow
-1. User enters phone → `POST /auth/request-code`
-2. SMS code sent → `POST /auth/verify-code`
-3. Token received → stored in `UserDefaults` (TODO: migrate to Keychain)
-
-### Endpoints (Planned)
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/auth/request-code` | Request SMS verification code |
-| POST | `/auth/verify-code` | Verify code & get auth token |
-| GET | `/wallet` | Get wallet balance & details |
-| GET | `/transactions` | List transactions (paginated) |
-| POST | `/transactions/send` | Send money to user |
-| POST | `/transactions/request` | Request money from user |
-| GET | `/profile` | Get user profile |
-
-## Next Steps
-
-- [ ] Replace `UserDefaults` token storage with Keychain
-- [ ] Wire up real backend endpoints
-- [ ] Add Apple Pay integration
-- [ ] Add biometric auth (Face ID)
-- [ ] Implement push notifications
-- [ ] Add unit tests + UI tests
-- [ ] CI/CD pipeline setup
+The app expects the backend at `http://localhost:3001`. Update `APIClient.baseURL` for production.

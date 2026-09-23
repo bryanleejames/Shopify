@@ -150,7 +150,9 @@ struct ProfileView: View {
                 Section("Settings") {
                     profileRow(icon: "bell.fill", title: "Notifications")
                     profileRow(icon: "lock.fill", title: "Privacy & Security")
-                    profileRow(icon: "faceid", title: "Face ID / Passcode")
+
+                    biometricToggleRow
+
                     profileRow(icon: "questionmark.circle.fill", title: "Help & Support")
                 }
 
@@ -224,6 +226,50 @@ struct ProfileView: View {
         .padding(.vertical, 2)
         .background(DesignSystem.Colors.surface)
         .cornerRadius(DesignSystem.Radius.sm)
+    }
+
+    var biometricToggleRow: some View {
+        HStack(spacing: DesignSystem.Spacing.md) {
+            Image(systemName: BiometricAuthService.shared.biometryType == .faceID ? "faceid" : "touchid")
+                .font(.system(size: 18))
+                .foregroundColor(DesignSystem.Colors.primary)
+                .frame(width: 24)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(BiometricAuthService.shared.isAvailable
+                    ? "Require \(BiometricAuthService.shared.biometryName)"
+                    : "Biometric Auth")
+                    .font(DesignSystem.Typography.subheadline)
+                    .foregroundColor(DesignSystem.Colors.textPrimary)
+
+                if !BiometricAuthService.shared.isAvailable {
+                    Text("Not available on this device")
+                        .font(DesignSystem.Typography.caption)
+                        .foregroundColor(DesignSystem.Colors.textSecondary)
+                }
+            }
+
+            Spacer()
+
+            if BiometricAuthService.shared.isAvailable {
+                Toggle("", isOn: Binding(
+                    get: { BiometricAuthService.shared.isEnabled },
+                    set: { newValue in
+                        BiometricAuthService.shared.isEnabled = newValue
+                        if newValue {
+                            // Immediately lock and require auth
+                            Task {
+                                // Brief delay to let the toggle animate
+                                try? await Task.sleep(nanoseconds: 500_000_000)
+                                // Will be picked up on next app background/foreground
+                            }
+                        }
+                    }
+                ))
+                .tint(DesignSystem.Colors.primary)
+            }
+        }
+        .padding(.vertical, 2)
     }
 
     /// First letter of the user's full name, or "?" if unknown
