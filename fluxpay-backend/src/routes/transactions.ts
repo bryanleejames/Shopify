@@ -2,9 +2,17 @@ import { Router, Request, Response } from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { getDb } from '../db/database';
 import { authenticateToken } from '../middleware/auth';
+import { sendPushNotification } from '../services/notifications';
 import { Transaction, TransactionRecord } from '../types';
 
 const router = Router();
+
+// Fire-and-forget notification dispatch (never blocks the HTTP response)
+function notify(userId: string, payload: { title: string; body: string; type?: string; data?: Record<string, string> }): void {
+  sendPushNotification(userId, payload).catch((err) => {
+    console.error('[Transactions] Notification dispatch failed:', err);
+  });
+}
 
 // Helper: format a transaction row into a response object
 function formatTransaction(row: TransactionRecord, currentWalletId: string): Transaction {
@@ -178,6 +186,31 @@ router.post('/send', authenticateToken, (req: Request, res: Response) => {
       return;
     }
 
+    // --- Weekly Limit Enforcement ---
+    const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+    const weeklySpent = db.prepare(`
+      SELECT COALESCE(SUM(t.amount), 0) as total
+      FROM transactions t
+      WHERE t.sender_wallet_id = ?
+        AND t.type IN ('send', 'instant_transfer', 'standard_transfer')
+        AND t.status = 'completed'
+        AND t.created_at >= ?
+    `).get(senderWallet.id, sevenDaysAgo) as { total: number };
+
+    // Get weekly limit from subscription or wallet default
+    const sub = db.prepare(
+      'SELECT transfer_limit, active FROM subscriptions WHERE user_id = ?'
+    ).get(req.user!.userId) as { transfer_limit: number; active: number } | undefined;
+    const weeklyLimit = sub && sub.active ? sub.transfer_limit : 5000;
+
+    if (weeklySpent.total + amount > weeklyLimit) {
+      const remaining = Math.max(0, weeklyLimit - weeklySpent.total);
+      res.status(400).json({
+        error: `Weekly limit exceeded. You've spent ${weeklySpent.total} this week (limit: ${weeklyLimit}). Remaining: ${remaining}`,
+      });
+      return;
+    }
+
     const recipientWallet = db.prepare(
       'SELECT id, balance, user_id FROM wallets WHERE user_id = ?'
     ).get(recipient_id) as { id: string; balance: number; user_id: string } | undefined;
@@ -224,6 +257,14 @@ router.post('/send', authenticateToken, (req: Request, res: Response) => {
     });
 
     executeTransfer();
+
+    // Notify recipient of incoming payment
+    notify(recipientWallet.user_id, {
+      title: 'Money received',
+      body: `${senderUser?.name || 'Someone'} sent you ${sendCurrency} ${amount}`,
+      type: 'transaction_received',
+      data: { transaction_id: trxId, amount: String(amount), currency: sendCurrency },
+    });
 
     res.status(201).json({
       id: trxId, amount, currency: sendCurrency, type: 'send', status: 'completed',
@@ -292,6 +333,17 @@ router.post('/request', authenticateToken, (req: Request, res: Response) => {
       VALUES (?, ?, ?, ?, ?, 'request', 'pending', ?, ?, ?, ?)
     `).run(trxId, fromWallet.id, requesterWallet.id, amount, reqCurrency,
       fromUser?.name || 'Unknown', `Requested ${reqCurrency} ${amount}`, note || null, now);
+
+    // Notify the person being requested from
+    const requesterName = db.prepare(
+      'SELECT COALESCE(display_name, full_name) as name FROM users WHERE id = ?'
+    ).get(req.user!.userId) as { name: string } | undefined;
+    notify(fromWallet.user_id, {
+      title: 'Payment request',
+      body: `${requesterName?.name || 'Someone'} requested ${reqCurrency} ${amount}`,
+      type: 'request_received',
+      data: { transaction_id: trxId, amount: String(amount), currency: reqCurrency },
+    });
 
     res.status(201).json({
       id: trxId, amount, currency: reqCurrency, type: 'request', status: 'pending',
@@ -385,6 +437,19 @@ router.post('/:id/accept', authenticateToken, (req: Request, res: Response) => {
 
     acceptTransfer();
 
+    // Notify the requester that their request was fulfilled
+    const requesterUserId = db.prepare(
+      'SELECT user_id FROM wallets WHERE id = ?'
+    ).get(tx.receiver_wallet_id) as { user_id: string } | undefined;
+    if (requesterUserId) {
+      notify(requesterUserId.user_id, {
+        title: 'Request accepted',
+        body: `${senderName?.name || 'Someone'} paid your ${tx.currency} ${tx.amount} request`,
+        type: 'request_accepted',
+        data: { transaction_id: sendId, amount: String(tx.amount), currency: tx.currency },
+      });
+    }
+
     res.json({
       id: sendId,
       amount: tx.amount,
@@ -429,6 +494,22 @@ router.post('/:id/decline', authenticateToken, (req: Request, res: Response) => 
     const now = new Date().toISOString();
     db.prepare('UPDATE transactions SET status = ?, description = ?, created_at = ? WHERE id = ?')
       .run('cancelled', `Declined request — ${tx.currency} ${tx.amount}`, now, tx.id);
+
+    // Notify the requester that their request was declined
+    const declinerName = db.prepare(
+      'SELECT COALESCE(display_name, full_name) as name FROM users WHERE id = ?'
+    ).get(userId) as { name: string } | undefined;
+    const requesterUserId = db.prepare(
+      'SELECT user_id FROM wallets WHERE id = ?'
+    ).get(tx.receiver_wallet_id) as { user_id: string } | undefined;
+    if (requesterUserId) {
+      notify(requesterUserId.user_id, {
+        title: 'Request declined',
+        body: `${declinerName?.name || 'Someone'} declined your ${tx.currency} ${tx.amount} request`,
+        type: 'request_declined',
+        data: { transaction_id: tx.id, amount: String(tx.amount), currency: tx.currency },
+      });
+    }
 
     res.json({
       id: tx.id,
