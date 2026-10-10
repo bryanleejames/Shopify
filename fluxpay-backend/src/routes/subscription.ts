@@ -65,12 +65,14 @@ router.post('/create', authenticateToken, (req: Request, res: Response) => {
 
     if (existing) {
       // Upgrade existing free subscription to premium
+      const stripeSubId = req.body.stripe_subscription_id || null;
+      const stripeCustId = req.body.stripe_customer_id || null;
       db.prepare(`
         UPDATE subscriptions SET tier = 'premium', active = 1,
           early_direct_deposit = 1, transfer_limit = 10000,
-          updated_at = ?
+          stripe_subscription_id = ?, stripe_customer_id = ?, updated_at = ?
         WHERE user_id = ?
-      `).run(now, userId);
+      `).run(stripeSubId, stripeCustId, now, userId);
 
       res.json({
         tier: 'premium',
@@ -85,10 +87,12 @@ router.post('/create', authenticateToken, (req: Request, res: Response) => {
 
     // Create new premium subscription
     const subId = uuidv4();
+    const stripeSubId = req.body.stripe_subscription_id || null;
+    const stripeCustId = req.body.stripe_customer_id || null;
     db.prepare(`
-      INSERT INTO subscriptions (id, user_id, tier, early_direct_deposit, transfer_limit, active, created_at, updated_at)
-      VALUES (?, ?, 'premium', 1, 10000, 1, ?, ?)
-    `).run(subId, userId, now, now);
+      INSERT INTO subscriptions (id, user_id, tier, early_direct_deposit, transfer_limit, active, stripe_subscription_id, stripe_customer_id, created_at, updated_at)
+      VALUES (?, ?, 'premium', 1, 10000, 1, ?, ?, ?, ?)
+    `).run(subId, userId, stripeSubId, stripeCustId, now, now);
 
     res.status(201).json({
       tier: 'premium',
