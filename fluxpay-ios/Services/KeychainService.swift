@@ -93,5 +93,6 @@ final class KeychainService {
 extension KeychainService {
     enum Keys {
         static let authToken = "auth_token"
+        static let deviceToken = "device_token"
     }
 }

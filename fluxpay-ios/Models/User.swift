@@ -246,6 +246,18 @@ struct UserSearchResult: Codable, Identifiable {
     }
 }
 
+// MARK: - Push Notification Responses
+/// Response from POST /notifications/register
+struct NotificationRegistrationResponse: Codable {
+    let registered: Bool
+    let platform: String?
+}
+
+/// Response from POST /notifications/unregister
+struct NotificationUnregisterResponse: Codable {
+    let unregistered: Bool
+}
+
 // MARK: - Paginated Response Wrappers
 struct PaginatedTransactions: Codable {
     let data: [TransactionResponse]
