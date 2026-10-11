@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "FluxPay Backend API — Auth, Wallet, and Transaction services",
   "main": "dist/index.js",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
     "dev": "tsx watch src/index.ts",
     "test": "bun test"
   },

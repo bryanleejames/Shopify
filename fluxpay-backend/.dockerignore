@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.env
+.env.live
+.env.local
+*.db
+*.db-shm
+*.db-wal
+*.log
+npm-debug.log*
+data
+.DS_Store
