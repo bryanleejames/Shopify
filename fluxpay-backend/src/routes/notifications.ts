@@ -108,7 +108,9 @@ router.get('/', (req: Request, res: Response) => {
  * POST /notifications/:id/read — mark a single notification as read.
  */
 router.post('/:id/read', (req: Request, res: Response) => {
-  const updated = markNotificationRead(req.user!.userId, req.params.id);
+  const rawId = req.params.id;
+  const notificationId = Array.isArray(rawId) ? rawId[0] : rawId;
+  const updated = markNotificationRead(req.user!.userId, notificationId);
 
   if (!updated) {
     res.status(404).json({ error: 'Notification not found' });

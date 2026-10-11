@@ -1,8 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { AuthPayload } from '../types';
-
-const JWT_SECRET = process.env.JWT_SECRET || 'fluxpay-dev-jwt-secret-change-in-production';
+import { getJwtSecret } from '../config';
 
 // Extend Express Request to include user
 declare global {
@@ -14,7 +13,7 @@ declare global {
 }
 
 export function generateToken(payload: AuthPayload): string {
-  return jwt.sign(payload, JWT_SECRET, { expiresIn: '7d' });
+  return jwt.sign(payload, getJwtSecret(), { expiresIn: '7d' });
 }
 
 export function authenticateToken(req: Request, res: Response, next: NextFunction): void {
@@ -27,7 +26,7 @@ export function authenticateToken(req: Request, res: Response, next: NextFunctio
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET) as AuthPayload;
+    const decoded = jwt.verify(token, getJwtSecret()) as AuthPayload;
     req.user = decoded;
     next();
   } catch (err) {

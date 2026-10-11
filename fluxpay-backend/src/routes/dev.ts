@@ -5,6 +5,16 @@ import { getDb } from '../db/database';
 
 const router = Router();
 
+// Defensive gate: dev endpoints must never run in production unless
+// explicitly force-enabled. (index.ts also refuses to mount /dev in prod.)
+router.use((_req, res, next) => {
+  if (process.env.NODE_ENV === 'production' && process.env.ENABLE_DEV_ENDPOINTS !== 'true') {
+    res.status(404).json({ error: 'Not found' });
+    return;
+  }
+  next();
+});
+
 // POST /dev/seed — create test users, wallets, and transactions for demo/dev
 router.post('/seed', (_req: Request, res: Response) => {
   try {
